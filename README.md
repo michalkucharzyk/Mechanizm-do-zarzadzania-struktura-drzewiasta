@@ -5,7 +5,7 @@ Aplikacja webowa do zarządzania strukturą drzewistą, która zapisywana jest w
 # Wykorzystane technologie:
 - PHP
 - MySql
-- Bibloteka jsTree
+- Bibloteka [jsTree](https://www.jstree.com/)
 - jQuery
 - AJAX
 - HTML
@@ -15,7 +15,7 @@ Aplikacja webowa do zarządzania strukturą drzewistą, która zapisywana jest w
 # Szybka konfiguracja
 
 1. Należy stworzyć bazę danych o nazwie struktura, 
-2. Zaimportować plik z bazą danych,
-3. Ustawić w pliku config.php parametry połączenia z bazą.
+2. Zaimportować plik z [bazą danych](database.sql),
+3. Ustawić w pliku [config.php](config.php). parametry połączenia z bazą.
 
 

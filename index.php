@@ -63,10 +63,9 @@ require_once('config.php')
                     <div class="col-6">
                         <p> Zmień nazwę wybranego dziecka</p>
                         <div class="form-group">
-                            <input class="form-control" id="nowaNazwa" type="text" placeholder="Nazwa..." required>
+                            <input class="form-control" maxlength="100" id="nowaNazwa" type="text" placeholder="Nazwa..." required>
                         </div>
                         <div class="form-group">
-
                             <button type="button" id="zmienNazweButton" class="btn-sm btn-secondary">Zmień nazwę
                                 wybranego węzła
                             </button>
@@ -87,7 +86,7 @@ require_once('config.php')
                 <h4>Dodawanie wezla</h4>
                 <div class="form-group">
                     <label>Nazwa nowego wezla</label>
-                    <input class="form-control" name="nazwaWezla" id="nazwaWezla" type="text" placeholder="Nazwa..."
+                    <input class="form-control" name="nazwaWezla"  maxlength="100"  id="nazwaWezla" type="text" placeholder="Nazwa..."
                            required>
                 </div>
                 <div class="form-group">

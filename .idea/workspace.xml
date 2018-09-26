@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a9822ed-d3f8-4d34-bd52-990211b32c48" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,12 +54,14 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="88" column="84" lean-forward="false" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
+            <state relative-caret-position="286">
+              <caret line="196" column="20" lean-forward="false" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
               <folding>
-                <marker date="1537950605254" expanded="true" signature="1073:1096" ph="Select * Fro... struktura" />
-                <marker date="1537950605254" expanded="true" signature="1929:1952" ph="Select * Fro... struktura" />
-                <marker date="1537950605254" expanded="true" signature="4414:4437" ph="Select * Fro... struktura" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#6080#6447#0#HTML" expanded="false" />
+                <marker date="1537953258588" expanded="true" signature="1125:1148" ph="Select * Fro... struktura" />
+                <marker date="1537953258588" expanded="true" signature="2002:2025" ph="Select * Fro... struktura" />
+                <marker date="1537953258588" expanded="true" signature="5298:5321" ph="Select * Fro... struktura" />
               </folding>
             </state>
           </provider>
@@ -113,6 +114,7 @@
       <find>zamienWezlyButton</find>
       <find>$id_rodzica_wezla</find>
       <find>return</find>
+      <find>hr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,12 +211,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537800871704</updated>
-      <workItem from="1537800877842" duration="59377000" />
+      <workItem from="1537800877842" duration="61686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59377000" />
+    <option name="totallyTimeSpent" value="61686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -349,12 +351,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="88" column="84" lean-forward="false" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
+        <state relative-caret-position="286">
+          <caret line="196" column="20" lean-forward="false" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
           <folding>
-            <marker date="1537950605254" expanded="true" signature="1073:1096" ph="Select * Fro... struktura" />
-            <marker date="1537950605254" expanded="true" signature="1929:1952" ph="Select * Fro... struktura" />
-            <marker date="1537950605254" expanded="true" signature="4414:4437" ph="Select * Fro... struktura" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#6080#6447#0#HTML" expanded="false" />
+            <marker date="1537953258588" expanded="true" signature="1125:1148" ph="Select * Fro... struktura" />
+            <marker date="1537953258588" expanded="true" signature="2002:2025" ph="Select * Fro... struktura" />
+            <marker date="1537953258588" expanded="true" signature="5298:5321" ph="Select * Fro... struktura" />
           </folding>
         </state>
       </provider>

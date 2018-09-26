@@ -9,12 +9,13 @@ require_once('config.php')
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="dist/style.min.css"/>
     <script src="dist/jstree.min.js"></script>
-    <title></title>
+    <title> Mechaniz do zarządznia strukturą drzewiastą</title>
     <script>
     </script>
 </head>
 <body>
-<div style="margin-top: 100px;" class="container">
+<div style="margin-top: 75px;" class="container">
+    <hr>
     <div class="row">
         <div class="col-6">
             <div id="strukturaDrzewa"></div>
@@ -37,6 +38,7 @@ require_once('config.php')
                         ?>
                     </select>
                 </div>
+                <hr>
                 <div class="row">
                     <div class="col-6">
                         <p> Przypmni do nowego węzła</p>
@@ -72,13 +74,28 @@ require_once('config.php')
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <p> Usuń zaznaczone wezel</p>
-                    <button type="button" id="usunWezelButton" class="btn-sm btn-danger">Usuń wybrany węzeł
-                    </button>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <p> Usuń zaznaczone wezel</p>
+                            <button type="button" id="usunWezelButton" class="btn-sm btn-danger">Usuń wybrany węzeł
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <p> Wyszukaj w strukturze</p>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nazwa szukanego elementu..." class="form-control"
+                                   id="nazwaSzukanegoElementu">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="buttonSzukaj" class="btn-sm btn-info">Wyszukaj w strukturze
+                            </button>
+                        </div>
+                    </div>
                 </div>
-
-
+                <hr>
             </form>
         </div>
         <div class="col-6">
@@ -106,7 +123,7 @@ require_once('config.php')
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="button" id="buttonAddWezel" class="btn-sm btn-dark">Dodaj dziecka</button>
+                    <button type="button" id="buttonAddWezel" class="btn-sm btn-dark">Dodaj węzeł</button>
                 </div>
                 <hr>
             </form>
@@ -122,18 +139,29 @@ require_once('config.php')
     $(document).ready(function () {
         //fill data to tree  with AJAX call
         $('#strukturaDrzewa').jstree({
-            'plugins': ["wholerow"],
+            'plugins': ["wholerow", "search", "sort"],
             'core': {
                 'data': {
                     "url": "response.php",
-                    "plugins": ["wholerow", "search", "sort"],
                     "dataType": "json" // needed only if you do not supply JSON headers
                 }
             }
         })
     });
 
-// Rozwinęcie/Zwinięcie wezłów
+    // Przeszukiwanie struktury
+    $(document).ready(function () {
+        $('#buttonSzukaj').click(function () {
+            var nazwaSzukanegoElementu = $('#nazwaSzukanegoElementu').val();
+            if (nazwaSzukanegoElementu !== null && nazwaSzukanegoElementu !== '') {
+                $('#strukturaDrzewa').jstree(true).search(nazwaSzukanegoElementu);
+            } else {
+                alert("Nie podano szukanego elementu");
+            }
+        });
+    });
+
+    // Rozwinęcie/Zwinięcie wezłów
     function rozwinDrzewo() {
         var rozwiniete = false;
         if (rozwiniete === false) {
@@ -152,8 +180,8 @@ require_once('config.php')
         $('#buttonAddWezel').click(function () {
             var nazwaWezla = $('#idNadrzenegoWezla').val();
             var idRodzica = $('#idNadrzenegoWezla').val();
-            if ((idRodzica !== null && idRodzica !== '')) {
-                if ((nazwaWezla !== null && nazwaWezla !== '')) {
+            if ((nazwaWezla !== null && nazwaWezla !== '')) {
+                if ((idRodzica !== null && idRodzica !== '')) {
                     $.ajax({
                         type: "POST",
                         url: "dodajWezel.php",
@@ -164,10 +192,10 @@ require_once('config.php')
                         }
                     });
                 } else {
-                    alert("Nie podano nazwy")
+                    alert("Nie wybrano rodzica")
                 }
             } else {
-                alert("Nie wybrano rodzica")
+                alert("Nie podano nazwy")
             }
         });
     });

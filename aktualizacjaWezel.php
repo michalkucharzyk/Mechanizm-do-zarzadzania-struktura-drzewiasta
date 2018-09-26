@@ -6,7 +6,15 @@
  * Time: 22:16
  */
 require_once('config.php');
-$idNowegoNadrzenegoWezla = $_POST['idNowegoNadrzenegoWezla'];
-$idWeza = $_POST['idWezla'];
-
-updateNewWezel($idWeza, $idNowegoNadrzenegoWezla);
+$flaga = true;
+if (!isset($_POST['idNowegoNadrzenegoWezla'])) {
+    $flaga = false;
+}
+if (!isset($_POST['idWezla'])) {
+    $flaga = false;
+}
+if ($flaga === true) {
+    $idNowegoNadrzenegoWezla = $_POST['idNowegoNadrzenegoWezla'];
+    $idWeza = $_POST['idWezla'];
+    updateNewWezel($idWeza, $idNowegoNadrzenegoWezla);
+}

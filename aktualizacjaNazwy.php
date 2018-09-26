@@ -24,7 +24,6 @@ if (!isset($_POST['idWezla']) === true) {
     echo "Nie wybrano rodzica ";
 } else {
     $idRodzica =filter_var($_POST['idWezla'], FILTER_SANITIZE_STRING);
-
 }
 
 if ($flaga === true) {

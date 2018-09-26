@@ -20,13 +20,14 @@ require_once('config.php')
         <div class="col-6">
             <div id="strukturaDrzewa"></div>
             <button style="margin-top: 25px;" class="btn btn-sm" id="pokazWezly" onclick="rozwinDrzewo()">Rozwiń
-                węzły
+                drzewo
             </button>
             <hr>
             <form style="margin-top:25px " id="edycjaDrzewa" method="post">
                 <div class="form-group">
+                    <label>Wybierz element do edycji</label>
                     <select id="idWezla" class="form-control" required>
-                        <option value="" disabled selected>Wybierz wezel do edycji...</option>
+                        <option value="" disabled selected>Wybierz element do edycji...</option>
                         <?php
                         $query = "Select * From struktura";
                         $results = queryDB($query);
@@ -63,13 +64,12 @@ require_once('config.php')
                         </div>
                     </div>
                     <div class="col-6">
-                        <p> Zmień nazwę wybranego dziecka</p>
+                        <p> Zmień nazwę wybranego elementu</p>
                         <div class="form-group">
                             <input class="form-control" maxlength="100" id="nowaNazwa" type="text" placeholder="Nazwa..." required>
                         </div>
                         <div class="form-group">
                             <button type="button" id="zmienNazweButton" class="btn-sm btn-secondary">Zmień nazwę
-                                wybranego węzła
                             </button>
                         </div>
                     </div>
@@ -78,8 +78,8 @@ require_once('config.php')
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <p> Usuń zaznaczone wezel</p>
-                            <button type="button" id="usunWezelButton" class="btn-sm btn-danger">Usuń wybrany węzeł
+                            <p> Usuń zaznaczony element</p>
+                            <button type="button" id="usunWezelButton" class="btn-sm btn-danger">Usuń
                             </button>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ require_once('config.php')
                                    id="nazwaSzukanegoElementu">
                         </div>
                         <div class="form-group">
-                            <button type="button" id="buttonSzukaj" class="btn-sm btn-info">Wyszukaj w strukturze
+                            <button type="button" id="buttonSzukaj" class="btn-sm btn-info">Wyszukaj
                             </button>
                         </div>
                     </div>
@@ -161,17 +161,17 @@ require_once('config.php')
         });
     });
 
+    var rozwiniete = false;
     // Rozwinęcie/Zwinięcie wezłów
     function rozwinDrzewo() {
-        var rozwiniete = false;
         if (rozwiniete === false) {
             rozwiniete = true;
-            $("button#pokazWezly").text("Zwiń węzły");
+            $("button#pokazWezly").text("Zwiń drzewo");
             $("#strukturaDrzewa").jstree('open_all');
         } else {
             rozwiniete = false;
             $("#strukturaDrzewa").jstree('close_all');
-            $("button#pokazWezly").text("Rozwiń węzły");
+            $("button#pokazWezly").text("Rozwiń drzewo");
         }
 
     }
@@ -251,8 +251,8 @@ require_once('config.php')
         $('#zamienWezlyButton').click(function () {
             var idNowegoNadrzenegoWezla = $('#idNowyWezl').val();
             var idWezla = $('#idWezla').val();
-            if ((idNowegoNadrzenegoWezla !== null && idNowegoNadrzenegoWezla !== '')) {
-                if ((idWezla !== null && idWezla !== '')) {
+            if ((idWezla !== null && idWezla !== '')) {
+                if ((idNowegoNadrzenegoWezla !== null && idNowegoNadrzenegoWezla !== '')) {
                     $.ajax({
                         type: "POST",
                         url: "aktualizacjaWezel.php",
@@ -265,7 +265,7 @@ require_once('config.php')
                         }
                     });
                 } else {
-                    alert("Nie podano nowej nazwy")
+                    alert("Nie podano nowego wezla")
                 }
             } else {
                 alert("Nie wybrano węzła do zmiany")
